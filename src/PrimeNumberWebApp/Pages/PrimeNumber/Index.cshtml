@@ -1,0 +1,74 @@
+@page
+
+@model PrimeNumberWebApp.Pages.PrimeNumber.IndexModel
+
+@{
+
+    ViewData["Title"] = "List of Prime Numbers";
+
+}
+
+
+
+<h3>@ViewData["Title"]</h3>
+
+<p>
+
+    <a asp-page="Create"> Add Prime Number </a> <br/>
+
+    <a asp-page="Details"> Get Prime Number </a>
+
+</p>
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Items[0].Index)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Items[0].PrimeValue)
+
+            </th>
+
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Items)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Index)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.PrimeValue)
+
+                </td>
+
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
